@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "osx-cross/avr": {
-        "revision": "fc04b4919dbeda3c2ae44a87b450e0583388f77d"
+        "revision": "372486e66c955ec6ab029836cc792a8930dada64"
       },
       "px4/px4": {
-        "revision": "3c71517245ea433416a30262d7abe3acb9bde53e"
+        "revision": "7b3172ea2c6b15f50e8e910cb8e72210e7687fc7"
       }
     },
     "brew": {
@@ -76,18 +76,55 @@
         }
       },
       "osx-cross/avr/avr-gcc": null,
-      "px4/px4/gcc-arm-none-eabi": null
+      "px4/px4/gcc-arm-none-eabi": null,
+      "dfu-util": {
+        "version": "0.9",
+        "bottle": {
+          "cellar": ":any",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/dfu-util-0.9.catalina.bottle.tar.gz",
+              "sha256": "742ed4829d01efdb37854b29e5f2199b4674b310cdad87f8cfdbeedc3ed97c7e"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/dfu-util-0.9.mojave.bottle.tar.gz",
+              "sha256": "811d4e5d574bf5d3cb8783374927c6861c083e05711f538925a819490c5a49c7"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/dfu-util-0.9.high_sierra.bottle.tar.gz",
+              "sha256": "c1e5f33cee759c8273ed5b9088262c442773342378939cecd374c99889126f8b"
+            },
+            "sierra": {
+              "url": "https://homebrew.bintray.com/bottles/dfu-util-0.9.sierra.bottle.tar.gz",
+              "sha256": "3b9f9f6cf990becc1f2979fbec2cf2833d6f0ee2ab1ba3db4979203f1d591ee2"
+            },
+            "el_capitan": {
+              "url": "https://homebrew.bintray.com/bottles/dfu-util-0.9.el_capitan.bottle.tar.gz",
+              "sha256": "49975a34b6bacad4549871097effce90e376d3cd26ed24b2d7dfd925a199f0f8"
+            },
+            "yosemite": {
+              "url": "https://homebrew.bintray.com/bottles/dfu-util-0.9.yosemite.bottle.tar.gz",
+              "sha256": "776c3ed14def87511f9280201a95490145a9d469e2c1e29873c335e2c39ed279"
+            },
+            "mavericks": {
+              "url": "https://homebrew.bintray.com/bottles/dfu-util-0.9.mavericks.bottle.tar.gz",
+              "sha256": "75c7ffa4e2d5067618c41f999f3d0c8a9aac1080e9eb8cd1f9bec8dd154aa1c1"
+            }
+          }
+        }
+      }
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.2.10",
+        "HOMEBREW_VERSION": "2.5.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "052a37f40d419510c6c25692ee56a2b47613b3dd",
-        "CLT": "",
-        "Xcode": "11.3.1",
-        "macOS": "10.15.3"
+        "Homebrew/homebrew-core": "0efecb6cd027e6b8791ca2d3b03c21c78c0a7c30",
+        "CLT": "1103.0.32.62",
+        "Xcode": "12.0",
+        "macOS": "10.15.6"
       }
     }
   }
