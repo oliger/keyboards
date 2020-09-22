@@ -9,29 +9,19 @@ enum layers {
   _ADJUST
 };
 
-enum keycodes {
-  A_GRAVE = SAFE_RANGE,
-  A_CIRCONFLEXE,
-  E_GRAVE,
-  E_CIRCONFLEXE,
-  E_AIGU,
-  E_TREMA,
-  I_CIRCONFLEXE,
-  I_TREMA,
-  O_CIRCONFLEXE,
-  U_GRAVE,
-  U_CIRCONFLEXE,
-  U_TREMA,
-  C_CEDILLE,
-  E_EURO
-};
-
 #define SPECIAL MO(_SPECIAL)
 #define SYMBOLS MO(_SYMBOLS)
 #define GUI MO(_GUI)
 
-#define SSHOT LCMD(S(KC_5))
 #define ARROWS_F LT(_ARROWS, KC_F)
+
+#define LCTL_VOLD LCTL_T(KC__VOLDOWN)
+#define LALT_VOLU LALT_T(KC__VOLUP)
+#define RCMD_RWD RCMD_T(KC_MRWD)
+#define RALT_PLY RALT_T(KC_MPLY)
+#define RCTL_FWD RCTL_T(KC_MFFD)
+
+#define SSHOT LCMD(S(KC_5))
 
 #define WM_LRGR LCTL(LALT(LSFT(KC_RGHT)))
 #define WM_FULL LALT(LGUI(KC_F))
@@ -45,6 +35,28 @@ enum keycodes {
 #define WM_SW S(LCTL(LGUI(KC_LEFT)))
 #define WM_W LALT(LGUI(KC_LEFT))
 #define WM_CNTR LALT(LGUI(KC_C))
+
+enum les_keycodes {
+  A_GRAVE = SAFE_RANGE,
+  A_CIRCONFLEXE,
+
+  E_GRAVE,
+  E_CIRCONFLEXE,
+  E_AIGU,
+  E_TREMA,
+  E_EURO,
+
+  I_CIRCONFLEXE,
+  I_TREMA,
+
+  O_CIRCONFLEXE,
+
+  U_GRAVE,
+  U_CIRCONFLEXE,
+  U_TREMA,
+
+  C_CEDILLE,
+};
 
 /**
  * Helpers
@@ -167,11 +179,11 @@ uint32_t layer_state_set_user(uint32_t state) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_preonic_grid(
-    KC_GESC,        KC_1,    KC_2,    KC_3,    KC_4,     KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
-    KC_TAB,         KC_Q,    KC_W,    KC_E,    KC_R,     KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-    KC_TAB,         KC_A,    KC_S,    KC_D,    ARROWS_F, KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    LSFT_T(KC_EQL), KC_Z,    KC_X,    KC_C,    KC_V,     KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RSFT_T(KC_ENT),
-    GUI,            KC_LCTL, KC_LALT, KC_LGUI, SPECIAL,  KC_SPC,  KC_SPC,  SYMBOLS, KC_LGUI, KC_LALT, KC_LCTL, KC_RGHT
+    _______,        _______,   _______,   _______, _______,  _______, _______, _______, _______,  _______,  _______,  _______,
+    KC_GESC,        KC_Q,      KC_W,      KC_E,    KC_R,     KC_T,    KC_Y,    KC_U,    KC_I,     KC_O,     KC_P,     KC_BSPC,
+    KC_TAB,         KC_A,      KC_S,      KC_D,    ARROWS_F, KC_G,    KC_H,    KC_J,    KC_K,     KC_L,     KC_SCLN,  KC_QUOT,
+    LSFT_T(KC_EQL), KC_Z,      KC_X,      KC_C,    KC_V,     KC_B,    KC_N,    KC_M,    KC_COMM,  KC_DOT,   KC_SLSH,  RSFT_T(KC_ENT),
+    GUI,            LCTL_VOLD, LALT_VOLU, KC_LCMD, SPECIAL,  KC_SPC,  KC_SPC,  SYMBOLS, RCMD_RWD, RALT_PLY, RCTL_FWD, KC_HYPR
   ),
 
   [_ARROWS] = LAYOUT_preonic_grid(
