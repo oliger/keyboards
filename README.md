@@ -15,6 +15,7 @@ rake
 ## Flash
 
 ```sh
+rake crkbd:flash
 rake preonic:flash
 rake planck:flash
 ```
