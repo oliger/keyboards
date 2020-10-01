@@ -4,7 +4,8 @@ QMK_DIR = "qmk"
 KEYMAP_NAME = "jimmy"
 KEYBOARDS = [
   ["planck", "rev5", "dfu"],
-  ["preonic", "rev3", "dfu-util"]
+  ["preonic", "rev3", "dfu-util"],
+  ['crkbd', 'rev1', 'avrdude']
 ]
 
 task default: :install
@@ -19,6 +20,7 @@ task :install do
  Dir.chdir(QMK_DIR) do
     sh "git pull"
     sh "make git-submodule"
+    sh "qmk setup ."
   end
 
   KEYBOARDS.each do |(keyboard, rev, bootloader)|
