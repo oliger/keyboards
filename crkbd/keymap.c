@@ -5,23 +5,27 @@ enum corne_layers {
   _ARROWS,
   _SPECIAL,
   _SYMBOLS,
-  // _GUI,
   _ADJUST
 };
 
 #define SPECIAL MO(_SPECIAL)
 #define SYMBOLS MO(_SYMBOLS)
-// #define GUI MO(_GUI)
-
 #define ARROWS_F LT(_ARROWS, KC_F)
 
-#define LCTL_VOLD LCTL_T(KC__VOLDOWN)
-#define LALT_VOLU LALT_T(KC__VOLUP)
-#define RCMD_RWD RCMD_T(KC_MRWD)
-#define RALT_PLY RALT_T(KC_MPLY)
-#define RCTL_FWD RCTL_T(KC_MFFD)
-
 #define SSHOT LCMD(S(KC_5))
+
+#define WM_LRGR LCTL(LALT(LSFT(KC_RGHT)))
+#define WM_FULL LALT(LGUI(KC_F))
+#define WM_SMLR LCTL(LALT(LSFT(KC_LEFT)))
+#define WM_NW LCTL(LGUI(KC_LEFT))
+#define WM_N LALT(LGUI(KC_UP))
+#define WM_NE LCTL(LGUI(KC_RGHT))
+#define WM_E LALT(LGUI(KC_RGHT))
+#define WM_SE S(LCTL(LGUI(KC_RGHT)))
+#define WM_S LALT(LGUI(KC_DOWN))
+#define WM_SW S(LCTL(LGUI(KC_LEFT)))
+#define WM_W LALT(LGUI(KC_LEFT))
+#define WM_CNTR LALT(LGUI(KC_C))
 
 enum les_keycodes {
   A_GRAVE = SAFE_RANGE,
@@ -41,10 +45,10 @@ enum les_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_split_3x6_3( \
-      KC_GESC,        KC_Q, KC_W, KC_E, KC_R,           KC_T,                    KC_Y,   KC_U,  KC_I,    KC_O,   KC_P,    KC_BSPC,\
-      LCTL_T(KC_TAB), KC_A, KC_S, KC_D, ARROWS_F,       KC_G,                    KC_H,   KC_J,  KC_K,    KC_L,   KC_SCLN, KC_QUOT,\
-      LSFT_T(KC_EQL), KC_Z, KC_X, KC_C, KC_V,           KC_B,                    KC_N,   KC_M,  KC_COMM, KC_DOT, KC_SLSH, RSFT_T(KC_ENT),\
-                                        OSM(MOD_LGUI),  SPECIAL, KC_SPC, KC_ENT, SYMBOLS, KC_RALT \
+      KC_GESC,        KC_Q, KC_W, KC_E, KC_R,           KC_T,                     KC_Y,   KC_U,  KC_I,    KC_O,   KC_P,    KC_BSPC,\
+      LCTL_T(KC_TAB), KC_A, KC_S, KC_D, ARROWS_F,       KC_G,                     KC_H,   KC_J,  KC_K,    KC_L,   KC_SCLN, KC_QUOT,\
+      LSFT_T(KC_EQL), KC_Z, KC_X, KC_C, KC_V,           KC_B,                     KC_N,   KC_M,  KC_COMM, KC_DOT, KC_SLSH, RSFT_T(KC_ENT),\
+                                        OSM(MOD_LGUI),  SPECIAL, KC_SPC, _______, SYMBOLS, KC_RALT \
 
   ),
 
@@ -71,9 +75,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_ADJUST] = LAYOUT_split_3x6_3( \
-      _______, RESET,   DEBUG,   _______, _______, _______,                   _______, _______, _______, _______, _______, _______,\
-      _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,\
-      _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,\
+      _______, RESET,   DEBUG,   _______, _______, _______,                   _______, WM_NW,   WM_N,    WM_NE,   WM_LRGR, _______,\
+      _______, _______, _______, _______, _______, _______,                   _______, WM_W,    WM_CNTR, WM_E,    WM_SMLR, _______,\
+      _______, _______, _______, _______, _______, _______,                   _______, WM_SW,   WM_S,    WM_SE,   WM_FULL, _______,\
                                           _______, _______, _______, _______, _______, _______ \
   )
 };
