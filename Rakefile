@@ -3,8 +3,6 @@ require "rake"
 QMK_DIR = "qmk"
 KEYMAP_NAME = "jimmy"
 KEYBOARDS = [
-  ["planck", "rev5", "dfu"],
-  ["preonic", "rev3", "dfu-util"],
   ['crkbd', 'rev1', 'avrdude']
 ]
 
